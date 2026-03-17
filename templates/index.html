@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Meeting Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Meeting Summarizer</h1>
+            <p>Transform your meeting recordings into actionable insights</p>
+        </div>
+
+        <div class="content">
+            <form method="POST" enctype="multipart/form-data" action="/upload" id="uploadForm">
+                <div class="upload-section">
+                    <div class="upload-icon">📁</div>
+                    <h3>Upload Your Meeting Recording</h3>
+                    <p style="color: #64748b; margin-bottom: 20px;">
+                        Support for audio and video files (MP3, MP4, WAV, etc.)
+                    </p>
+                    
+                    <div class="file-input-wrapper">
+                        <input type="file" name="file" accept="audio/*,video/*" required class="file-input" id="fileInput" />
+                        <label for="fileInput" class="file-input-label">
+                            Choose File
+                        </label>
+                    </div>
+                    
+                    <div class="file-name" id="fileName"></div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        ✨ Generate Summary
+                    </button>
+                </div>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Processing your meeting... This may take a few minutes.</p>
+            </div>
+
+            {% if summary %}
+            <div class="summary-section">
+                <div class="summary-header">
+                    <div class="summary-icon">✅</div>
+                    <h3>Meeting Summary</h3>
+                </div>
+                <div class="summary">{{ summary }}</div>
+            </div>
+            {% endif %}
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h4>AI-Powered</h4>
+                    <p>Advanced AI technology for accurate transcription and summarization</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h4>Fast Processing</h4>
+                    <p>Quick turnaround time for your meeting summaries</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Secure</h4>
+                    <p>Your data is processed securely and confidentially</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

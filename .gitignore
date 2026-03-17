@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+uploads/
+temp_audio/
+test_videos/
+*.mp3
+*.wav
+.idea/
+.vscode/
