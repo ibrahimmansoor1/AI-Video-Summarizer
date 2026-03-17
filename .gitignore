@@ -10,3 +10,4 @@ test_videos/
 *.wav
 .idea/
 .vscode/
+tmpclaude-*
