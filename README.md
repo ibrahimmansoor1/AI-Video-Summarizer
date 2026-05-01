@@ -147,6 +147,7 @@ MIT
 ## 👤 Author
 
 Muhammad Ibrahim Mansoor  
+Shayan Rehman
 AI/ML Developer  
 GitHub: [@ibrahimmansoor1](https://github.com/ibrahimmansoor1)
 
